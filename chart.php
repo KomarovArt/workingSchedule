@@ -1,10 +1,12 @@
 <?php
 
 
-
-
 function  calculateSchedule($month = 4, $year = 2022,$counter = 0,$red=31,$green=32)
 {
+
+    $date = new DateTime();
+    $newDate=$date -> setDate($year,$month,1);
+    echo $newDate->format('Y-m-d').PHP_EOL;
 
  switch($month){
     case 1:
@@ -48,9 +50,9 @@ function  calculateSchedule($month = 4, $year = 2022,$counter = 0,$red=31,$green
     break;
 
  }
- echo "список всех дней месяца: ".cal_days_in_month(0, date($month), date($year)).PHP_EOL;
+ echo "список всех дней месяца: ".cal_days_in_month(0, $newDate->format('m'), $newDate->format('Y')).PHP_EOL;
 
-for ($x=1;$x<=cal_days_in_month(0, date($month), date($year));$x++){
+for ($x=1;$x<=cal_days_in_month(0, $newDate->format('m'), $newDate->format('Y'));$x++){
 
 if(date('w',mktime(0,0,0,$month,$x,$year))==6||date('w',mktime(0,0,0,$month,$x,$year))==0){
     $color = $red;
@@ -63,7 +65,6 @@ if(date('w',mktime(0,0,0,$month,$x,$year))==6||date('w',mktime(0,0,0,$month,$x,$
         $counter = 0;
     }
 }
-
 
 if ($x==cal_days_in_month(0, date($month), date($year))) {
     echo "\033[{$color}m $x \033[0m". PHP_EOL;
