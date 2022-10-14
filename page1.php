@@ -11,11 +11,11 @@
     <h1>404</h1>
     <h2>УПС, что-то пошло не так.... Эта страница не существует.</h2>
 
+
+</body>
+
 <?php
 header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
 ?>
-</body>
 
-
-
-
+</html>

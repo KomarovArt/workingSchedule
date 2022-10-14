@@ -10,9 +10,19 @@
 
 </body>
 <?php
+$new_url = './page4.php';
+$_SESSION["pagesession"];
 session_start();
 
 $_SESSION["pagesession"]=$_SESSION["pagesession"]+1;
-echo var_dump($_SESSION);
+if ($_SESSION["pagesession"]%3===0) {
+    header('Location: '.$new_url);
+   
+} else {
+     
+}
+
+echo "<h1>{$_SESSION["pagesession"]}</h1>"
+
 ?>
 </html>

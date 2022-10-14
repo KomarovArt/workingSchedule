@@ -7,6 +7,7 @@
     <title>Страница 4</title>
 </head>
 <body>
-    
+    <h1>Вы на 4ой страничке</h1>
+    <h2><a href="./page3.php">Назад</a></h2>
 </body>
 </html>
