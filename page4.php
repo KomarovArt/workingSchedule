@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>Вы на 4ой страничке</h1>
+    echo "<h1>Поситили 3юю страницу {$_SESSION["pagesession"]} раз</h1>"
+
     <h2><a href="./page3.php">Назад</a></h2>
 </body>
 </html>
