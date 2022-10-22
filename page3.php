@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница 3</title>
-</head>
-<body>
-
-</body>
 <?php
-$new_url = './page4.php';
-$_SESSION["pagesession"];
 session_start();
+
+if (array_key_exists("pagesession",$_SESSION)==false){
+    $_SESSION["pagesession"]=0;
+}
+$new_url = './page4.php';
+
 
 $_SESSION["pagesession"]=$_SESSION["pagesession"]+1;
 if ($_SESSION["pagesession"]%3===0) {
@@ -22,7 +15,5 @@ if ($_SESSION["pagesession"]%3===0) {
      
 }
 
-echo "<h1>{$_SESSION["pagesession"]}</h1>"
-
+echo "<h1>Вы на странице {$_SESSION["pagesession"]} раз</h1>";
 ?>
-</html>
